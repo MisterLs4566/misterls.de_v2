@@ -1,37 +1,47 @@
-const express = require('express'); // framework for webservers and the creation of api-endpoints
-const mysql = require('mysql'); // connection to mysql db
-const cors = require('cors'); // middleware for cross-origin requests
-require('dotenv').config({override : true}); //.env file
-
+const express = require('express');
+const path = require('path');
 const app = express();
-app.use(cors());
+const PORT = process.env.PORT || 3000;
+
+const fs = require('fs');
+
+async function useRustFib() {
+    const wasmModule = await import('./wasm-lib/pkg/wasm_lib.js');
+    // Pfad zur generierten .wasm-Datei
+    const wasmFilePath = path.join(__dirname, './wasm-lib/pkg/wasm_lib_bg.wasm');
+    const wasmBuffer = fs.readFileSync(wasmFilePath);
+
+    // Initialisiere das Modul manuell
+    await wasmModule.default(wasmBuffer);
+    
+
+    // Fibonacci-Funktion aufrufen
+    const result = wasmModule.fibonacci(11);
+    console.log(`Fibonacci(10) = ${result}`);
+}
+
+useRustFib().catch(console.error);
+
+
+"use strict"
+
+// Middleware to parse JSON requests
 app.use(express.json());
 
-const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
+// Serve static files from React build folder
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// API route example
+app.get('/api/data', (req, res) => {
+    res.json({ message: 'Hello from the API!' });
 });
 
-db.connect(err => {
-    if (err) {
-        console.error('mysql error: ', err);
-        return;
-    }
-    console.log('mysql connected');
+// Catch-all route to serve React's index.html for any unknown routes (SPA)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
-app.get('/api/user', (req, res) => {
-
-    db.query('SELECT * FROM user', (err, results) => {
-        if (err) {
-            res.status(500).send(err);
-        } else {
-            res.json(results);
-        }
-    });
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`server runs on port ${PORT}`));
