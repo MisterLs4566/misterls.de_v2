@@ -13,10 +13,10 @@ My goal for this project is to develop a full-stack web application using Node.j
 
 ## Technologies
 
-- **Frontend**: React
-- **Backend**: Node.js
+- **Frontend**: React 18.2.0
+- **Backend**: Node.js v23.5.0
 - **Styling**: CSS (and possibly a CSS framework)
-- **Database**: TBD (To Be Decided)
+- **Database**: MySQL 8.4.0
 
 ## Features
 
