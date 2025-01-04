@@ -34,4 +34,18 @@ app.get('/api/user', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
+
+
+process.on('SIGINT', () => {
+    console.log('Shutting down...');
+    connection.end((err) => {
+      if (err) {
+        console.error('Error closing the database connection:', err);
+      } else {
+        console.log('Database connection closed.');
+      }
+      process.exit();
+    });
+});
+
 app.listen(PORT, () => console.log(`server runs on port ${PORT}`));
