@@ -48,6 +48,7 @@ DB_NAME=[your_db_name]
 ```bash
 git clone https://github.com/yourusername/misterls.de_v2.git
 cd misterls.de_v2
+cd server
 npm install
 ```
 
