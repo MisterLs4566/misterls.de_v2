@@ -8,9 +8,9 @@ I've always wanted to create my own website to have a publicly accessible place 
 
 This repository has been created to work on a new version (v2) of my website and to share the code with anyone who is interested.
 
-## Goals
+### ❗Work in Progress
 
-The goal of this project is to develop a full-stack web application using Node.js and React. This approach will allow me to enhance my skills in modern web development and create a more dynamic and interactive website.
+**Important:** This project is currently under active development and is not yet complete. 
 
 ## Technologies
 
