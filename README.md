@@ -33,18 +33,23 @@ To get started with the project, clone the repository, configure your local MySQ
 ### Set up your local database
 
 1. Install XAMPP or a similar tool.
-2. Create and configure your MySQL database as needed.
+2. Create and configure your MySQL database as needed. The tables shown in the mockup RM ([wiki](https://github.com/MisterLs4566/misterls.de_v2/wiki/Database-Mockups)) will be created automatically when the server is running.
+
 
 ### Clone the repository and install dependencies
 
+```bash
 git clone https://github.com/yourusername/misterls.de_v2.git
 cd misterls.de_v2
 npm install
+```
 
 ### Run the server locally
 
+```bash
 cd server
 npm run dev
+```
 
 ### Open the web app
 
@@ -52,7 +57,9 @@ npm run dev
 2. Open your browser.
 3. Enter the following URL:
 
+```plaintext
 localhost:[port]
+```
 
 ### Install extensions (optional)
 
