@@ -1,5 +1,3 @@
-# misterls.de_v2
-
 Welcome to the repository for misterls.de v2!
 
 ## Introduction
@@ -15,7 +13,7 @@ My goal for this project is to develop a full-stack web application using Node.j
 
 - **Frontend**: React 18.2.0
 - **Backend**: Node.js v23.5.0
-- **Styling**: CSS (and possibly a CSS framework)
+- **Styling**: CSS / Tailwind CSS
 - **Database**: MySQL 8.4.0
 
 ## Features
@@ -27,13 +25,41 @@ My goal for this project is to develop a full-stack web application using Node.j
 
 ## Getting Started
 
-To get started with the project, clone the repository and install the necessary dependencies.
+To get started with the project, clone the repository, configure your local mysql database and install the necessary dependencies. To do so, please consider the following guide:
+### Set up your local database
+- install Xammp or a similar 
 
-```bash
+### Install the dependencies and clone the repo
+bash
 git clone https://github.com/yourusername/misterls.de_v2.git
 cd misterls.de_v2
 npm install
-```
+
+### Run the server locally
+bash
+cd server
+npm run dev
+
+### Open the web app
+- The servers runs on the port which is now written in the console (default is port 3000)
+- Open the browser
+- type in: 
+plaintext
+localhost:[port]
+
+
+### Install extensions (optional) 
+I used the following extensions in vscode, which I can recommend:
+1. ESLint, Prettier (better code and readablitiy)
+2. Markdown Preview Enhanced
+3. Catppuccin for VSCode (Mocha color theme)
+
+## Tools I used
+
+I used the following tools for the documentation and the implementation of the project: 
+
+- Visual Studio Code (prefered IDE)
+- draw.io (for the mockups)
 
 ## Contributing
 
