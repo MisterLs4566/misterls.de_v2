@@ -32,7 +32,7 @@ To get started with the project, clone the repository, configure your local MySQ
 
 ### Set up your local database
 
-1. Install XAMPP or a similar tool.
+1. Install MySQL. To do so, you can follow the guide provided in the wiki of this repo
 2. Create and configure your MySQL database as needed. The tables shown in the mockup RM ([wiki](https://github.com/MisterLs4566/misterls.de_v2/wiki/Database-Mockups)) will be created automatically when the server is running.
 3. Create a new file: '.env' and save it in the root folder of the project. Fill in the following values to enable the communication between the web app and the local database:
 ```plaintext
