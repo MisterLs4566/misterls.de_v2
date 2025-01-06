@@ -15,9 +15,10 @@ This repository has been created to work on a new version (v2) of my website and
 ## Technologies
 
 - **Frontend**: React 18.2.0
-- **Backend**: Node.js v23.5.0
+- **Backend**: Node.js v23.5.0, TypeScript
 - **Styling**: CSS / Tailwind CSS
 - **Database**: MySQL 8.4.0
+- **Deployment**: Docker
 
 ## Features
 
