@@ -1,13 +1,12 @@
 import express from 'express';
-import path from 'path';
 
 const app = express();
+const port = 3000;
 
-// API-Routen hier definieren
+app.get('/', (req, res) => {
+  res.send('Server is running!');
+});
 
-// Serve React app
-app.use(express.static(path.join(__dirname, '../../client/build')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+app.listen(port, () => {
+  console.log(`Server is listening on http://localhost:${port}`);
 });
