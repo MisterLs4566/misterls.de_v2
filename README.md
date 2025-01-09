@@ -77,6 +77,7 @@ I used the following VS Code extensions, which I recommend:
 1. ESLint and Prettier (for better code quality and readability)
 2. Markdown Preview Enhanced (for previewing Markdown files)
 3. Catppuccin for VS Code (Mocha color theme)
+4. Inline fold (new) (for better formatting Tailwind CSS)
 
 ## Tools I Used
 
